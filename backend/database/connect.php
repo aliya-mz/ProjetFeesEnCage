@@ -5,6 +5,8 @@
   Sujet      : Page de fonction de connexion à la bd
  */
 
+ //ok
+
 //Connexion à la base de donnée
 function db() {
   static $myDb = null;
