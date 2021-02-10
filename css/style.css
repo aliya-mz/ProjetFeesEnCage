@@ -1,0 +1,294 @@
+
+
+body{
+  background-color:#CBC5ED;
+  width:100%;
+  margin:0;
+  font-size:14px;
+  font-family:sans-serif;
+  color:#463333;
+}
+
+main{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+}
+
+/*Navigation*/
+nav{
+  background-color:#F3F0F7;
+  height:60px;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  padding-top:2%;
+  padding-bottom:2%;
+}
+
+.navigation{
+  display:flex;
+  flex-direction:row;
+  margin-right:5%;
+}
+
+a{
+  text-decoration:none;
+}
+
+.lienBouton{
+  margin-right:5%;
+  border:none;
+  height:50px;
+  background-color:#D5D5E0;
+  text-decoration:none;
+  text-align:center;
+  color:grey;
+  display:table;
+  border-radius:5px;
+}
+
+.lienBouton span{
+  vertical-align:middle;
+  display:table-cell;
+  width:140px;
+}
+
+.boutonHome{
+  width:50px;
+}
+
+.boutonHome img{
+    width: 50px;
+}
+
+input, select, button{
+  border:none;
+  width:100%;
+  height:50px;
+  background-color:#E9E7EF;
+  color:#656565;
+  margin:1px;
+  border-radius:5px;
+  padding-right:10px;
+  padding-left:10px;
+}
+
+.iconButton{
+  height:30px;
+}
+
+table{
+  width:90%;
+  border-collapse:collapse;
+  text-align:center;
+}
+
+form{
+  margin-left:5%;
+}
+
+thead{
+  background-color:#D5D5E0;
+  color:white;
+}
+
+td{
+  width:15%;
+  height:40px;
+}
+
+.btnSubmit{
+  background-color:#D5D5E0;
+  padding:10px;
+  color:#656565;
+}
+
+.supprMod{
+  background-color:#D5D5E0;
+  width:70px;
+}
+
+.colAction{
+  width:5%;
+  color:#656565;
+}
+
+.navEnd{
+  display:flex;
+  justify-content:flex-end;
+}
+
+/*Formulaire Rechercher*/
+
+.formSearch{
+  width:600px;
+  display:flex;
+  flex-direction:row;
+}
+
+.formSearch table{
+  width:100%;
+}
+
+.formSearch button{
+  background-color:#D5D5E0;
+}
+
+
+/*Formulaire Ajouter Idée*/
+
+.formAdd{
+  width:40%;
+  margin:2%;
+}
+
+.formAdd tr, td{
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  padding-top:1%;
+  padding-bottom:1%;
+}
+
+.formAdd button{
+  height:50px;
+  background-color:#D5D5E0;
+  border-radius:5px;
+  border:none;
+}
+
+.formAdd input, select, option, button, textarea{
+  width:100%;
+}
+
+.formAdd textarea{
+  height:200px;
+  background-color:#E9E7EF;
+  border-radius:5px;
+  border:none;
+}
+
+.btnCreateIdea{
+  width:30%;
+}
+
+.navAjouter .lienBouton{
+  margin-left:5%;
+}
+
+.taglabel{
+  background-color:#F3F0F7;
+  color: #4F4C5B;
+  border-radius:50px;
+  height:40px;
+  margin:5px;
+  padding-right:20px;
+  padding-left:20px;
+  line-height: 40px;
+}
+
+.contenantTags{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  height:auto;
+}
+
+.align-right{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  align-items: center;
+}
+
+.align-left{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+#publique{
+  width:30px;
+}
+
+
+/*Tableaux de la page "voirMesIdees"*/
+
+.ideesUserMain{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content:space-around;
+}
+
+.ideesUserMain table{
+  width:35%;
+  margin-top:30px;
+}
+
+.ideesUserMain tbody tr{
+  display:flex;
+  flex-direction:row;
+  border-radius:10px;
+  background-color:#E9E7EF;
+  margin:10px;
+}
+
+.ideesUserMain td{
+  height:200px;
+}
+
+.ideesUserMain thead tr td{
+  height:50px;
+  background-color:#CBC5ED;
+  color:#4F4C5B;
+}
+
+.ideesUserMain button{
+  background-color: #D5D5E0;
+  width:90px;
+  height:40px;
+}
+
+.conteneurIdee{
+  height:100%;
+  width:100%;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.en-teteIdee{
+  height:15%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.corpsIdee{
+  height:60%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.actionsIdee{
+  height:15%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
