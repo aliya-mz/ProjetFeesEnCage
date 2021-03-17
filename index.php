@@ -5,17 +5,6 @@
   Sujet      : Page d'accueil du projet
 */
 
-//A FAIRE
-//modification des notes
-//suppression des notes
-//modification/suppression des idées
-
-//AMELIORAIONS POSSIBLES
-//gestion des centres d'intérêt de l'utilisateur
-//recommandations d'idées sur la page d'accueil en fonction de ces intérêts
-//pagination idées (3/page)
-//icones
-//interaction
 
 session_start();
 include("backend/autoload.php");
@@ -27,7 +16,7 @@ $idees = [];
 $categories = readCategories();
 $mettreEnFavoris = FILTER_INPUT(INPUT_POST, "mettreEnFavoris", FILTER_SANITIZE_STRING);
 
-//si on n'a pas recherché
+//si on n'a pas cliqué sur une fée
 if(!$recherche){
   //Afficher toutes les idées
   $idees = ReadIdees();

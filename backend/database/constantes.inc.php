@@ -8,6 +8,6 @@
  //ok
 
 define("HOST", "127.0.0.1");
-define("DBNAME", "bd_sourcedegenie");
+define("DBNAME", "bd_feesencage");
 define("DBUSER", "liberateur");
 define("DBPWD", "mot");
