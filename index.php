@@ -5,42 +5,31 @@
   Sujet      : Page d'accueil du projet
 */
 
-
 session_start();
 include("backend/autoload.php");
 
-$categorie = FILTER_INPUT(INPUT_POST, "categorie", FILTER_SANITIZE_STRING);
-$tags = FILTER_INPUT(INPUT_POST, "tags", FILTER_SANITIZE_STRING);
-$recherche = FILTER_INPUT(INPUT_POST, "recherche", FILTER_SANITIZE_STRING);
-$idees = [];
-$categories = readCategories();
-$mettreEnFavoris = FILTER_INPUT(INPUT_POST, "mettreEnFavoris", FILTER_SANITIZE_STRING);
+$feeSelect = FILTER_INPUT(INPUT_POST, "fee", FILTER_SANITIZE_STRING);
+$action = FILTER_INPUT(INPUT_POST, "btnAction", FILTER_SANITIZE_STRING);
+$fees = [];
 
-//si on n'a pas cliqué sur une fée
-if(!$recherche){
-  //Afficher toutes les idées
-  $idees = ReadIdees();
+//si un utilisateur est connecté
+if(isset($_SESSION["idUser"])){
+  //Récupérer les fées de sa cage
+  $idees = readFeesByCage(readCageByUser($_SESSION["idUser"]));
 }
-//sinon
-else{
-  //si au moins un champs du formulaire a été rempli
-  if($tags || $categorie){
-    //lire toutes les notes publiques qui correspondent aux critères
-    if(isset($_SESSION["idUser"])){
-      //si l'utilisateur est connecté, lui afficher également ses idées
-      $idees = readIdeesByCritereExpansion($tags, $categorie, $_SESSION["idUser"]);
-    }
-    else{
-      //si l'utilisateur n'est pas connecté, lui afficher les idées publiques des autres
-      //$idees = readIdeesByCritereExpansion($tags, $categorie);
-    }
+
+//si l'utilisateur appuie sur un bouton
+if($action){
+  if($action == "valider"){
+    //La fée est libérée 
+    //[animation appel à une fonction js]
+    deleteFee($feeSelect);
   }
-}
-
-if($mettreEnFavoris){
-  echo "Les favoris fonctionnent";
-  //si un bonton favoris a été cliqué, changer l'état favoris/pas favoris de l'idée correspondante
-  changerEtatFavoris($mettreEnFavoris);
+  else if($action == "infos"){
+    //rediriger sur la page d'information de la fée en question
+    header('Location: infosAction.php?idFee='.$feeSelect);
+    exit;
+  }
 }
 ?>
 
@@ -55,7 +44,7 @@ if($mettreEnFavoris){
     <nav>
       <form class="formSearch" action="" method="POST">
         <input type="text" name="tags" placeholder="mot(s)-clé" value="<?php echo $tags;?>">
-        <?php categorieToSelect($categories, $categorie); ?>
+        <?php //categorieToSelect($categories, $categorie); ?>
         <button type="submit" name="recherche" value="rechercher">Rechercher</button>
       </form>
       <div class="navigation">
@@ -74,20 +63,8 @@ if($mettreEnFavoris){
       </div>
     </nav>
 
-    <main class="ideesUserMain">
-      <table>
-        <form method="post" action="voirMesIdees.php">
-          <thead>
-            <tr>
-              <td colspan="5">Mes idées</td>
-            </tr>
-          </thead>
-          <?php
-            //affichage dynamique des idées 
-            ideesToHtmlTable($idees, false, false);
-          ?>
-          </form>
-      </table>      
+    <main class="zoneAffichage">
+      <img class="imgCage" src="img/cage.png"/>    
     </main>
   </body>
 </html>

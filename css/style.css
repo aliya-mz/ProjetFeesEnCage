@@ -292,3 +292,24 @@ td{
   justify-content: center;
 }
 
+/*Zone d'affichage des images*/
+
+.zoneAffichage{
+  height:800px;
+}
+
+.imgCage{
+  height:800px;
+}
+
+.imgFeeS{
+  height:50px;
+}
+
+.imgFeeM{
+  height:65px;
+}
+
+.imgFeeL{
+  height:80px;
+}
