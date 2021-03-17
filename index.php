@@ -13,7 +13,7 @@ $action = FILTER_INPUT(INPUT_POST, "btnAction", FILTER_SANITIZE_STRING);
 $fees = [];
 
 //si un utilisateur est connecté
-if(!isset($_SESSION["idUser"])){
+if(!getUtilisateurConnecte()){
   //Récupérer les fées de sa cage
   //$fees = readFeesByCage(readCageByUser($_SESSION["idUser"]));
   $fees = readFeesByCage(readCageByUser(0));
@@ -65,7 +65,14 @@ if($action){
     </nav>
 
     <main class="zoneAffichage">
-      <img class="imgCage" src="img/cage.png"/>    
+      <div class="zoneAffichageInfos"> 
+        <table>
+        <?php feeToHtmlTable($feeSelect); ?>
+        </table>
+      </div>
+      <div id="zoneCage" class="zoneAffichageImages"> 
+        <img class="imgCage" src="img/cage.png"/>
+      </div>          
     </main>
   </body>
 </html>

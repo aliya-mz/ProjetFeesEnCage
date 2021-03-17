@@ -26,6 +26,26 @@ function readFeesByCage($idCage){
   return $answer;
 }
 
+function ReadFeeById($idFee)
+{
+  static $ps = null;
+  $sql = "SELECT * FROM fee WHERE idFee = :idFee";
+  if($ps == null){
+    $ps = db()->prepare($sql);
+  }
+  $answer = false;
+  try{
+    $ps->bindParam(':idFee', $idFee, PDO::PARAM_INT);
+
+    if($ps->execute())
+      $answer = $ps->fetch(PDO::FETCH_ASSOC);
+  }
+  catch(PDOException $e){
+    echo $e->getMessage();
+  }
+  return $answer;
+}
+
 function createFee($idCage, $commentaire, $importance){
   static $ps = null;
   $sql = "INSERT INTO `fee` (`idCage`, `commentaire`, `importance`) VALUES ( :idCage, :commentaire, :importance)";
