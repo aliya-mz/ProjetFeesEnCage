@@ -43,7 +43,7 @@ function readUserById($idUtilisateur){
   return $answer;
 }
 
-function createUser($pseudo, $email, $motDePasse, $idCage){
+function createUser($pseudo, $email, $motDePasse){
   static $ps = null;
   $sql = "INSERT INTO `utilisateur` (`pseudo`, `email`, `motDePasse`) VALUES ( :pseudo, :email, :motDePasse)";
   if($ps == null){

@@ -1,6 +1,6 @@
 <?php
 /*
-  Date       : Novembre 2020
+  Date       : Mars 2021
   Auteur     : Aliya Myaz
   Sujet      : Page de déconnexion
 */

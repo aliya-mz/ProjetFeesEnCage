@@ -1,6 +1,6 @@
 <?php
 /*
-  Date       : Novembre 2020
+  Date       : Mars 2021
   Auteur     : Aliya Myaz
   Sujet      : Page pour créer un compte
 */
@@ -9,7 +9,6 @@ include("backend/autoload.php");
 session_start();
 
 VerifierAccessibilite(false);
-
 
 //récupérer les données du formulaire
 $pseudo = FILTER_INPUT(INPUT_POST, "pseudo", FILTER_SANITIZE_STRING);

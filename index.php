@@ -1,6 +1,6 @@
 <?php
 /*
-  Date       : Mars 2020
+  Date       : Mars 2021
   Auteur     : Aliya Myaz
   Sujet      : Page d'accueil du projet
 */
@@ -13,9 +13,10 @@ $action = FILTER_INPUT(INPUT_POST, "btnAction", FILTER_SANITIZE_STRING);
 $fees = [];
 
 //si un utilisateur est connecté
-if(isset($_SESSION["idUser"])){
+if(!isset($_SESSION["idUser"])){
   //Récupérer les fées de sa cage
-  $idees = readFeesByCage(readCageByUser($_SESSION["idUser"]));
+  //$fees = readFeesByCage(readCageByUser($_SESSION["idUser"]));
+  $fees = readFeesByCage(readCageByUser(0));
 }
 
 //si l'utilisateur appuie sur un bouton
@@ -39,12 +40,12 @@ if($action){
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" >
+    <script type="text/javascript" src="backend/fonctions_js.js"></script>
   </head>
   <body>
     <nav>
       <form class="formSearch" action="" method="POST">
-        <input type="text" name="tags" placeholder="mot(s)-clé" value="<?php echo $tags;?>">
-        <?php //categorieToSelect($categories, $categorie); ?>
+        <?php feeASelectionner($fees, 0); ?>
         <button type="submit" name="recherche" value="rechercher">Rechercher</button>
       </form>
       <div class="navigation">
