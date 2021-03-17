@@ -1,6 +1,6 @@
 <?php
 /*
-  Date       : Novembre/décembre 2020
+  Date       : Mars 2020
   Auteur     : Aliya Myaz
   Sujet      : Page d'accueil du projet
 */
