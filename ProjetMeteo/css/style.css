@@ -1,0 +1,39 @@
+
+*{
+
+}
+
+body{
+    background-color: aliceblue;
+}
+
+nav{
+
+}
+
+main{
+    width: 100%;
+}
+
+.meteoTable{
+    margin:auto;
+    width:50%
+}
+
+.meteoTable tr{
+    width: 100%;
+}
+
+.meteoBulle{
+    width: 100%;
+    height: 500px;
+    border-radius : 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meteoBulle div{
+    margin:20px;
+}
